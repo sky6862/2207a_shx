@@ -1,0 +1,84 @@
+.item {
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.3);
+  border-radius: 20rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+}
+.item .time {
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.item .time image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+.item .address {
+  padding: 0px 28rpx;
+  display: flex;
+  align-items: center;
+}
+.item .address image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+.item image {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 400rpx;
+}
+.item .main {
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.item .main .left .title {
+  font-weight: bolder;
+  font-size: 34rpx;
+  letter-spacing: 4rpx;
+}
+.item .main .left .price {
+  color: red;
+}
+.item .main .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item .main .right .phone,
+.item .main .right .service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.item .main .right .phone image,
+.item .main .right .service image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.item .main .right .phone text,
+.item .main .right .service text {
+  color: #F3A73F;
+}
+.item .main .right .phone {
+  margin-right: 50rpx;
+}
+.item .main .right text {
+  color: #ccc;
+}
+.item .btn {
+  width: 90%;
+  margin: 0 auto;
+}
+.item .btn button {
+  background-color: #fa491d;
+  text-align: center;
+  color: #FFFFFF;
+  letter-spacing: 2rpx;
+}
+

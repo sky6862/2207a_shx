@@ -1,0 +1,1 @@
+<view class="bgc data-v-7db7d61a"><image src="../../static/ICON/w4.jpg" mode="aspectFill" class="data-v-7db7d61a"></image><button type="primary" open-type="getUserInfo" data-event-opts="{{[['tap',[['getUser',['$event']]]]]}}" bindtap="__e" class="data-v-7db7d61a">点我授权</button></view>

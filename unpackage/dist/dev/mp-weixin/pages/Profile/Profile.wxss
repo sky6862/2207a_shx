@@ -1,0 +1,16 @@
+.bgc.data-v-7db7d61a {
+  position: relative;
+  height: 100%;
+}
+.bgc image.data-v-7db7d61a {
+  width: 100%;
+  height: 100%;
+}
+.bgc button.data-v-7db7d61a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, 250%);
+          transform: translate(-50%, 250%);
+}
+

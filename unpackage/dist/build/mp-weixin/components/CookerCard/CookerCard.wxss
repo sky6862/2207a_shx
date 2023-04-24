@@ -1,0 +1,1 @@
+.item{box-shadow:0 0 10px rgba(0,0,0,.1);width:220rpx;height:280rpx;display:flex;flex-direction:column;justify-content:center;align-items:center}.item image{width:140rpx;height:140rpx;border-radius:50%}.item .starRate{margin-top:16rpx}

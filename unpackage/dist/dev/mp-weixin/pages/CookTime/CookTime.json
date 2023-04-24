@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "烹饪行程",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "plan-card": "/components/PlanCard/PlanCard"
+  }
+}

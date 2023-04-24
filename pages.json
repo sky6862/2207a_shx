@@ -1,17 +1,112 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
+		    "path" : "pages/CookTime/CookTime",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "烹饪行程",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/WishList/WishList",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "心愿单",
+		        "enablePullDownRefresh": true
+		    }
+		    
+		},
+		{
+		    "path" : "pages/index/index",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "四海香",
+		        "enablePullDownRefresh": false
+		    }
+		    
 		}
-	],
+        
+        ,{
+            "path" : "pages/Search/Search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/Loaded/Loaded",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/Profile/Profile",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "登录",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/Tousu/Tousu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "四海香",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#808080",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/ICON/footer1.png",
+	        "selectedIconPath": "static/ICON/footer1-sel.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/WishList/WishList",
+	        "iconPath": "static/ICON/footer2.png",
+	        "selectedIconPath": "static/ICON/footer2-sel.png",
+	        "text": "愿望清单"
+	    },{
+	        "pagePath": "pages/CookTime/CookTime",
+	        "iconPath": "static/ICON/footer3.png",
+	        "selectedIconPath": "static/ICON/footer3-sel.png",
+	        "text": "烹饪行程"
+	    },{
+	        "pagePath": "pages/Loaded/Loaded",
+	        "iconPath": "static/ICON/footer4.png",
+	        "selectedIconPath": "static/ICON/footer4-sel.png",
+	        "text": "我的"
+	    }]
+	}
 }

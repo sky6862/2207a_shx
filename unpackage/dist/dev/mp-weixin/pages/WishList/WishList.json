@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "心愿单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "food-card": "/components/FoodCard/FoodCard"
+  }
+}
