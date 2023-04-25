@@ -32,8 +32,29 @@
 		},
 			
 		mounted(){
+			/* uni.showModal({
+				title: '提示',
+				content: '这是一个模态弹窗',
+				// showCancel:false, //不显示取消按钮
+				confirmText:"确定",
+				cancelText:"取消",
+				success: function (res) {
+					if (res.confirm) {
+						console.log('用户点击确定');
+						// 拨打电话
+						uni.makePhoneCall({
+							phoneNumber:'15527069211'
+						})
+					} else if (res.cancel) {
+						console.log('用户点击取消');
+					}
+				}
+			});
+ */
+
 			const userinfo = uni.getStorageSync('userInfo')
-			if(userinfo){
+			// 判断用户是否登录
+			/* if(userinfo){
 				uni.showLoading({
 					title: '加载中'
 				});
@@ -41,7 +62,8 @@
 					this.planArr = goodsJson.planlist
 					uni.hideLoading();
 				}, 2000)
-			}
+			} */
+			this.planArr = goodsJson.planlist
 		}
 	}
 </script>

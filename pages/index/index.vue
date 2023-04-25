@@ -32,8 +32,10 @@
 				<text>坝坝宴</text>
 			</view>
 			<view class='item'>
-				<image src='../../static/ICON/6.png'></image>
-				<text>餐饮周边</text>
+				<navigator url="/pages/Around/Around">
+					<image src='../../static/ICON/6.png'></image>
+					<text>餐饮周边</text>
+				</navigator>
 			</view>
 		</view>
 		<!-- 中间图片区域 -->

@@ -18,6 +18,7 @@
 				<!-- 父亲在子组件身上绑定自定义事件 -->
 			</view>
 		</view>
+		
 		<view class="hide" v-if="isshow===true&&dataArr.length===0">
 			<view class="top">
 				<view class="left">

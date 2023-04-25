@@ -6,7 +6,8 @@
     "pages/Search/Search",
     "pages/Loaded/Loaded",
     "pages/Profile/Profile",
-    "pages/Tousu/Tousu"
+    "pages/Tousu/Tousu",
+    "pages/Around/Around"
   ],
   "subPackages": [],
   "window": {
@@ -47,6 +48,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

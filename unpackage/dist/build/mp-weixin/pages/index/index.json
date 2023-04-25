@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "四海香",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "c-card": "/components/CookerCard/CookerCard"
-  }
-}

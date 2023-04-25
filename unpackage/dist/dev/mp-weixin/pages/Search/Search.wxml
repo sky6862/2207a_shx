@@ -1,1 +1,1 @@
-<view>这是搜索页</view>
+<view><view>搜索</view><input type="text" placeholder="输入关键词" data-event-opts="{{[['blur',[['doSearch',['$event']]]]]}}" bindblur="__e"/></view>

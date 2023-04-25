@@ -84,6 +84,9 @@
 			uploadImage,
 			uploadFile
 		},
+		options: {
+			virtualHost: true
+		},
 		emits: ['select', 'success', 'fail', 'progress', 'delete', 'update:modelValue', 'input'],
 		props: {
 			// #ifdef VUE3
@@ -182,6 +185,12 @@
 				default () {
 					return ['original', 'compressed']
 				}
+			},
+			sourceType: {
+				type: Array,
+				default () {
+					return  ['album', 'camera']
+				}
 			}
 		},
 		data() {
@@ -278,7 +287,7 @@
 						files.push(Object.assign({}, v))
 					}
 				})
-				this.uploadFiles(files)
+				return this.uploadFiles(files)
 			},
 			async setValue(newVal, oldVal) {
 				const newData =  async (v) => {
@@ -346,6 +355,7 @@
 						type: this.fileMediatype,
 						compressed: false,
 						sizeType: this.sizeType,
+						sourceType: this.sourceType,
 						// TODO 如果为空，video 有问题
 						extension: _extname.length > 0 ? _extname : undefined,
 						count: this.limitLength - this.files.length, //默认9
@@ -416,11 +426,12 @@
 			 */
 			uploadFiles(files) {
 				files = [].concat(files)
-				uploadCloudFiles.call(this, files, 5, res => {
+				return uploadCloudFiles.call(this, files, 5, res => {
 						this.setProgress(res, res.index, true)
 					})
 					.then(result => {
 						this.setSuccessAndError(result)
+						return result;
 					})
 					.catch(err => {
 						console.log(err)
@@ -572,7 +583,11 @@
 						path: v.path,
 						size: v.size,
 						fileID:v.fileID,
-						url: v.url
+						url: v.url,
+						// 修改删除一个文件后不能再上传的bug, #694
+            uuid: v.uuid,
+            status: v.status,
+            cloudPath: v.cloudPath
 					})
 				})
 				return newFilesData
@@ -606,7 +621,9 @@
 		/* #ifndef APP-NVUE */
 		box-sizing: border-box;
 		overflow: hidden;
+		width: 100%;
 		/* #endif */
+		flex: 1;
 	}
 
 	.uni-file-picker__header {

@@ -1,1 +1,0 @@
-<view class="item"><image src="{{info.img}}"></image><text>{{info.name}}</text><uni-rate class="starRate" vue-id="712acee2-1" readonly="{{true}}" value="{{2}}" size="{{15}}" bind:__l="__l"></uni-rate></view>
