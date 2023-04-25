@@ -153,36 +153,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      imgArr: [],
-      baseUrl: 'https://slimmings.healthmach.com' };
+      msg_type: 1,
+      msg: "",
+      imgArr: [], //上传成功后，得到的文件地址数组
+      tips: "输入投诉详细说明(选填)" };
 
   },
   methods: {
+    changeType: function changeType(num) {
+      this.msg_type = num;
+      if (num == 1) {
+        this.tips = "服务态度:";
+      } else
+      if (num == 2) {
+        this.tips = "菜品问题:";
+      } else
+      {
+        this.tips = "付款问题:";
+      }
+    },
+    //上传图片：一次传一个
     upLoadImg: function upLoadImg() {var _this = this;
+
+      // A:选择图片 uni.chooseImage  https://zh.uniapp.dcloud.io/api/media/image.html
       //1.调用相关API传图片
+      // B:上传图片  
       //2.将这个图片上传到服务器
       //3.服务器应该返回这个图片的服务器地址
       //4.将返回的线上地址图片渲染到页面
       uni.chooseImage({
         count: 6, //默认9
         // sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-        // sourceType: ['album'], //从相册选择
+        extension: ['.jpg', '.gif', '.png'],
+        sourceType: ['album'], //从相册选择
         success: function success(res) {
+          console.log(res);
           uni.uploadFile({
-            url: 'https://slimmings.healthmach.com/api/plugs/uploads',
-            filePath: res.tempFilePaths[0],
-            name: 'files',
-            success: function success(uploadFileRes) {
-              var data = JSON.parse(uploadFileRes.data);
-              _this.imgArr.push(_this.baseUrl + data.data);
-              console.log(_this.imgArr);
+            url: "http://api.brqc.com.cn/cpz/shxmp/upload",
+            name: "pic",
+            filePath: res.tempFilePaths[0], //文件路径
+            success: function success(res) {
+              // res 返回一个字符串的结果，需要把json格式的字符中转为json对象
+              var res_data = JSON.parse(res.data);
+              console.log(res, res_data);
+              /* 
+                                          res_data = 
+                                          {
+                                          	code: 0
+                                          	data: {pic: 'http://api.brqc.com.cn/cpz/uploads/ffb6db7b09a1fdc297b39f97dd7bbbab.GIF', originalname: '4.GIF', extname: '.GIF', size: '0.09 MB'}
+                                          	msg: "图片上传成功"
+                                          	
+                                          }
+                                           */
+              var pic_url = res_data.data.pic;
+              _this.imgArr.push(pic_url);
             } });
 
         } });
+
+    },
+    // 删除文件
+    delImg: function delImg(pic_url, index) {
+      // 1.页面删除-imgArr元素删除
+      this.imgArr.splice(index, 1);
+      // 2.发请求，告诉后端，要删除这个已经上传过的图片
+      // uni.request({
+      // 	url:
+      // })
+    },
+    //提交表单
+    saveTouSu: function saveTouSu() {
+      // 1.获取要提交的数据(类型、说明，图片(图片地址))
+      // 2.发请求，保存投诉内容
+      console.log(this.msg_type, this.msg, JSON.stringify(this.imgArr));
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

@@ -14,13 +14,18 @@
   padding: 12rpx 20rpx;
   border: 1px solid #ddd;
 }
-.top view:nth-child(2) text.data-v-9763f400:nth-child(1) {
+.top view:nth-child(2) text.active.data-v-9763f400 {
   background-color: #de8116;
   color: #fff;
 }
 .main.data-v-9763f400 {
   padding: 40rpx;
   height: 30vh;
+}
+.sbt.data-v-9763f400 {
+  padding: 15rpx;
+  background-color: rebeccapurple;
+  text-align: center;
 }
 .img.data-v-9763f400 {
   padding: 40rpx;
@@ -33,5 +38,14 @@
   font-size: 120rpx;
   color: #959595;
   text-align: center;
+}
+.img .pre_img .item.data-v-9763f400 {
+  position: relative;
+}
+.img .pre_img .item text.data-v-9763f400 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }
 
